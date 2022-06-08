@@ -65,6 +65,8 @@ The APIs that are currently used are
 The API for creating an event is
 ```
 http://localhost:8000/api/event/create/:userId
+
+For example:
 http://localhost:8000/api/event/create/629b65ac86918efe044f39f7
 ```
 
@@ -75,5 +77,27 @@ http://localhost:8000/api/event/:eventName/:userId
 For example:
 http://localhost:8000/api/event/Discussion With Saurav/629b65ac86918efe044f39f7
 ```
+
+### In Meeting model, we store the following information about the meeting
+
+It contains
+  - **name:** the name of the meeting
+  - **meeting_start_time:**  the start date and time of the meeting
+  - **meeting_end_time:**  the end date and time of the meeting
+  - **meeting_organizer:**  the user who scheduled the meeting
+  - **participants:**  the users who are invited to the meeting
+  - **meeting_platform:**  the platform where the meeting will take place
+
+The APIs that are currently used are
+
+The API for scheduling a meeting is
+```
+http://localhost:8000/api/:eventName/meeting/create/:userId
+
+For example:
+http://localhost:8000/api/Discussion With Saurav/meeting/create/629b65ac86918efe044f39f7
+```
+
+
 
 
