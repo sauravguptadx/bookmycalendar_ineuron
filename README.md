@@ -14,14 +14,14 @@ We have mainly three models namely
   
 ### In User model, we store the information about the user.
 It contains
-  - name:                   the name of the user
-  - lastname:                the last name of the user
-  - email:                   the email of the user
-  - encry_password:          the password stored in encrypted way and not as normal text
-  - salt:                    string used in converting password to encry_password
-  - my_events:               list of events created by the user
-  - events_shared_with_me:   list of events shared by other users with this user
-  - meetings:                list of meetings scheduled by the user
+  - **name:**                   the name of the user
+  - **lastname:**                the last name of the user
+  - **email:**                   the email of the user
+  - **encry_password:**          the password stored in encrypted way and not as normal text
+  - **salt:**                    string used in converting password to encry_password
+  - **my_events:**               list of events created by the user
+  - **events_shared_with_me:**   list of events shared by other users with this user
+  - **meetings:**                list of meetings scheduled by the user
 
 The APIs that are currently used are
 ```
