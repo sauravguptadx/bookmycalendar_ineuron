@@ -84,3 +84,35 @@ exports.getEventByName = (req, res, next, name) => {
 exports.getEvent = (req, res) => {
     return res.json(req.event)
 }
+
+exports.deleteEvent = (req, res) => {
+    let event = req.event;
+    event.remove((err, deletedEvent) => {
+        if(err) {
+            return res.status(400).json({
+                error: "Failed to delete the meeting"
+            })
+        }
+        res.json({
+            message: "Delection was a success",
+            deletedEvent
+        })
+    })
+}
+
+
+exports.updateEvent = (req, res) => {
+    Event.findByIdAndUpdate(
+        {_id: req.profile._id},
+        {$set: req.body},
+        {new: true, useFindandModify: false}, 
+        (err, event) => {
+            if(err) {
+                return res.status(400).json({
+                    error: "UPDATE WAS NOT SUCCESSFUL"
+                })
+            }
+            res.json(event);
+        }
+    )
+}

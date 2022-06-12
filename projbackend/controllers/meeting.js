@@ -343,6 +343,55 @@ function addDaysToDate(date, days) {
     return result;
   }
 
+exports.getMeetingById = (req, res, next, id) => {
+    Meeting.findById(id).exec((err, meeting) => {
+        if(err || !meeting) {
+            return res.status(400).json({
+                error: "NO MEETING FOUND IN DB"
+            })
+        }
+
+        req.meeting = meeting;
+        next();
+    })
+}
+
+
+exports.deleteMeeting = (req, res) => {
+    let meeting = req.meeting;
+    meeting.remove((err, deletedMeeting) => {
+        if(err) {
+            return res.status(400).json({
+                error: "Failed to delete the meeting"
+            })
+        }
+        res.json({
+            message: "Delection was a success",
+            deletedMeeting
+        })
+    })
+}
+
+
+exports.updateMeeting = (req, res) => {
+    Meeting.findByIdAndUpdate(
+        {_id: req.profile._id},
+        {$set: req.body},
+        {new: true, useFindandModify: false}, 
+        (err, meeting) => {
+            if(err) {
+                return res.status(400).json({
+                    error: "UPDATE WAS NOT SUCCESSFUL"
+                })
+            }
+            res.json(meeting);
+        }
+    )
+}
+
+
+
+
   var transporter = nodemailer.createTransport({
     service: 'gmail',
     auth: {
