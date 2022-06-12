@@ -343,6 +343,10 @@ function addDaysToDate(date, days) {
     return result;
   }
 
+exports.getMeeting = (req, res) => {
+    return res.json(req.meeting)
+}
+
 exports.getMeetingById = (req, res, next, id) => {
     Meeting.findById(id).exec((err, meeting) => {
         if(err || !meeting) {
