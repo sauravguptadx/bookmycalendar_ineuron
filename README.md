@@ -25,17 +25,17 @@ It contains
 
 The APIs that are currently used are
 
-The API for signup using POST request is
+The API for **signup using POST request** is
 ```
 http://localhost:8000/api/signup
 ```
 
-The API for signin using POST request is
+The API for **signin using POST request** is
 ```
 http://localhost:8000/api/signup
 ```
 
-The API for getting a user from the database using GET request is
+The API for **getting a user from the database using GET request** is
 ```
 http://localhost:8000/api/user/:userId
 
@@ -43,7 +43,7 @@ For example:
 http://localhost:8000/api/user/629b65ac86918efe044f39f7
 ```
 
-The API for updating  user information using PUT request is
+The API for **updating  user information using PUT request** is
 ```
 http://localhost:8000/api/user/:userId
 
@@ -70,7 +70,7 @@ It contains
 
 The APIs that are currently used are
 
-The API for creating an event using POST request  is
+The API for **creating an event using POST request**  is
 ```
 http://localhost:8000/api/event/create/:userId
 
@@ -78,7 +78,7 @@ For example:
 http://localhost:8000/api/event/create/629b65ac86918efe044f39f7
 ```
 
-The API for getting an event from the database using GET request  is
+The API for **getting an event from the database using GET request**  is
 ```
 http://localhost:8000/api/event/:eventName/:userId
 
@@ -86,7 +86,7 @@ For example:
 http://localhost:8000/api/event/Discussion With Saurav/629b65ac86918efe044f39f7
 ```
 
-The API for updating an event from the database using PUT request  is
+The API for **updating an event from the database using PUT request**  is
 ```
 http://localhost:8000/api/event/:eventName/:userId
 
@@ -94,7 +94,7 @@ For example:
 http://localhost:8000/api/event/62a0a7ec59429f3e017e58f7/629b65ac86918efe044f39f7
 ```
 
-The API for deleting an event from the database using DELETE request  is
+The API for **deleting an event from the database using DELETE request**  is
 ```
 http://localhost:8000/api/event/:eventName/:userId
 
@@ -115,7 +115,7 @@ It contains
 
 The APIs that are currently used are
 
-The API for scheduling a meeting using POST request is
+The API for **scheduling a meeting using POST request** is
 ```
 http://localhost:8000/api/:eventName/meeting/create/:userId
 
@@ -123,7 +123,7 @@ For example:
 http://localhost:8000/api/Discussion With Saurav/meeting/create/629b65ac86918efe044f39f7
 ```
 
-The API for getting a meeting from the database using GET request is
+The API for **getting a meeting from the database using GET request** is
 ```
 http://localhost:8000/api/:eventName/meeting/:meetingId/:userId
 
@@ -132,7 +132,7 @@ http://localhost:8000/api/Discussion With Saurav/meeting/62a0554f019536207c778c5
 ```
 
 
-The API for updating a meeting using PUT request is
+The API for **updating a meeting using PUT request** is
 ```
 http://localhost:8000/api/:eventName/meeting/:meetingId/:userId
 
@@ -140,7 +140,7 @@ For example:
 http://localhost:8000/api/Discussion With Saurav/meeting/62a0554f019536207c778c5b/629b65ac86918efe044f39f7
 ```
 
-The API for deleting a meeting using DELETE request is
+The API for **deleting a meeting using DELETE request** is
 ```
 http://localhost:8000/api/:eventName/meeting/:meetingId/:userId
 
