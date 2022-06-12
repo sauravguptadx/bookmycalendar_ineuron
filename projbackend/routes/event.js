@@ -3,7 +3,7 @@ const router = express.Router();
 
 const {isSignedIn, isAuthenticated} = require("../controllers/auth");
 const {getUserById} = require("../controllers/user");
-const {createEvent, getEventById, getEvent, getEventByName} = require("../controllers/event")
+const {createEvent, getEventById, getEvent, getEventByName, deleteEvent, updateEvent} = require("../controllers/event")
 
 //all of params
 router.param("userId", getUserById);
@@ -20,5 +20,11 @@ router.post("/event/create/:userId", isSignedIn, isAuthenticated, createEvent);
 //router.get("/event/:eventId/:userId", isSignedIn, isAuthenticated, getEvent);
 
 router.get("/event/:eventName/:userId", isSignedIn, isAuthenticated, getEvent);
+
+//delete event
+router.delete("/event/:meetingId/:userId", isSignedIn, isAuthenticated, deleteEvent);
+
+//update event
+router.put("/event/:meetingId/:userId", isSignedIn, isAuthenticated, updateEvent);
 
 module.exports = router; 
